@@ -12,11 +12,49 @@ let sizeCost;
 Pizza.prototype.toppingsCost = function () {
   return this.toppings.length * 50
 }
+function sizeType() {
+  switch (sizeT) {
+    case "small":
+      sizeCost = 200;
+      break;
 
-$(document).ready(function () 
-{
-  
-  function pizzaType() 
+    case "medium":
+      sizeCost = 300;
+      break;
+
+    case "large":
+      sizeCost = 400;
+      break;
+
+    case "extraLarge":
+      sizeCost = 500;
+      break;
+
+  }
+}
+function crustType() {
+  switch (crustT) {
+    case "thin":
+      crustCost = 200;
+      break;
+
+    case "thick":
+      crustCost = 300;
+      break;
+
+    case "deep":
+      crustCost = 400;
+      break;
+
+    case "cheeseFilled":
+      crustCost = 500;
+      break;
+
+
+  }
+
+}
+function pizzaType() 
   {
     switch (pizzaT) {
 
@@ -43,61 +81,19 @@ $(document).ready(function ()
     }
 
   }
-  
-  function crustType() {
-    switch (crustT) {
-      case "thin":
-        crustCost = 200;
-        break;
+$(document).ready(function () 
+{
+  var pizzaT = $("form#pizzaType").val();
+  var crustT = $("form#crust").val();
+  var sizeT = $("form#size").val();
 
-      case "thick":
-        crustCost = 300;
-        break;
-
-      case "deep":
-        crustCost = 400;
-        break;
-
-      case "cheeseFilled":
-        crustCost = 500;
-        break;
-
-
-    }
-
-  }
-   
-
-   function sizeType() {
-    switch (sizeT) {
-      case "small":
-        sizeCost = 200;
-        break;
-
-      case "medium":
-        sizeCost = 300;
-        break;
-
-      case "large":
-        sizeCost = 400;
-        break;
-
-      case "extraLarge":
-        sizeCost = 500;
-        break;
-
-    }
-  }
-  ("form#sendIt").click(function(){
-    var pizzaT = $("form#pizzaType").val();
-    var crustT = $("form#crust").val();
-    var sizeT = $("form#size").val();
+  $("#sendIt").click(function(){
+    
     sizeType();
     pizzaType();
     crustType();
     
     alert(sizeCost+crustCost+typeCost)
-
 
   })
 
