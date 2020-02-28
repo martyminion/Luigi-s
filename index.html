@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src = "js/scripts.js"></script>
+    <title>Luigi's</title>
+  </head>
+  <body>
+    <h1>LUIGI'S PIZZERIA</h1>
+
+
+    <form>
+      <div id="pizzaType">
+        <h3>Choose you type of pizza</h3><br>
+        <div class="form-check-inline">
+          <label for="pizzaType1" class="form-check-label">Meat Deluxe</label>
+          <input class="form-check-input" name="type" type="radio" value="meatDeluxe">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaType2" class="form-check-label">Hawaiian</label>
+          <input class="form-check-input" name="type" type="radio" value="hawaiian">
+        </div><br>
+        <div class="form-check-inline">
+          <label for="pizzaType3" class="form-check-label">BoerWoers</label>
+          <input class="form-check-input" name="type" type="radio" value="boerWoers">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaType4" class="form-check-label">Chicken PeriPeri</label>
+          <input class="form-check-input" name="type" type="radio" value="chickenPeriPeri">
+        </div><br>
+        <div class="form-check-inline">
+          <label for="pizzaType5" class="form-check-label">Vegetarian</label>
+          <input class="form-check-input" name="type" type="radio" value="vegetarian">
+        </div>
+      </div>
+
+      <div id="size">
+        <h3>Does size Matter ??</h3>
+        <div class="form-check-inline">
+          <label for="pizzaSize1" class="form-check-label">Small</label>
+          <input class="form-check-input" name="size" type="radio" value="small">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaSize2" class="form-check-label">Medium</label>
+          <input class="form-check-input" name="size" type="radio" value="medium">
+        </div><br>
+        <div class="form-check-inline">
+          <label for="pizzaSize3" class="form-check-label">Large</label>
+          <input class="form-check-input" name="size" type="radio" value="large">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaSize4" class="form-check-label">Extra Large</label>
+          <input class="form-check-input" name="size" type="radio" value="extraLarge">
+        </div>
+      </div>
+      <div id="crust">
+        <h3>Its a crusty affair</h3>
+        <div class="form-check-inline">
+          <label for="pizzaCrust1" class="form-check-label">Thin Crust</label>
+          <input class="form-check-input" name="crust" type="radio" value="thin">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaCrust2" class="form-check-label">Thick Crust</label>
+          <input class="form-check-input" name="crust" type="radio" value="thick">
+        </div><br>
+        <div class="form-check-inline">
+          <label for="pizzaCrust3" class="form-check-label">Deep Crust</label>
+          <input class="form-check-input" name="crust" type="radio" value="deep">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaCrust4" class="form-check-label">Cheese-Filled</label>
+          <input class="form-check-input" name="crust" type="radio" value="cheeseFilled">
+        </div>
+
+      </div>
+      <div id="toppings">
+        <h3>Its a crusty affair</h3>
+        <div class="form-check-inline">
+          <label for="pizzaTopping1" class="form-check-label">Pineapples</label>
+          <input class="form-check-input" name="topping1" type="checkbox" value="pineapples">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaTopping2" class="form-check-label">Chicken</label>
+          <input class="form-check-input" name="topping2" type="checkbox" value="chicken">
+        </div><br>
+        <div class="form-check-inline">
+          <label for="pizzaTopping3" class="form-check-label">Beef</label>
+          <input class="form-check-input" name="topping3" type="checkbox" value="beef">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaTopping4" class="form-check-label">Bacon</label>
+          <input class="form-check-input" name="topping4" type="checkbox" value="bacon">
+        </div>
+        <div class="form-check-inline">
+          <label for="pizzaTopping5" class="form-check-label">Cheese</label>
+          <input class="form-check-input" name="topping5" type="checkbox" value="cheese">
+        </div>
+      </div>
+      <button type="submit" id="sendIt">Order</button>
+    </form>
+
+  </body>
+</html>
