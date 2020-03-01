@@ -85,19 +85,22 @@ $(document).ready(function ()
       }
   
     }
+  function totalPrice(typeCost,crustCost,sizeCost){
+    return totalCost = typeCost + crustCost + sizeCost
+  }
 
   $("#sendIt").click(function(event){
     event.preventDefault();
-    var pizzaT = $("#pizzaType").val();
-    var crustT = $("#crust").val();
-    var sizeT = $("#size").val();
+    var sizeT = $('input[name="size"]:checked').val();
+    var pizzaT = $('input[name="type"]:checked').val();
+    var crustT = $('input[name="crust"]:checked').val();
     
     sizeType(sizeT);
     pizzaType(pizzaT);
     crustType(crustT);
-    
-    console.log(sizeT)
-    alert("sizeT")
+    totalPrice(typeCost,crustCost,sizeCost)
+
+    alert(totalCost)
 
   })
  
