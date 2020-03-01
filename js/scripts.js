@@ -9,6 +9,7 @@ let crustCost;
 let typeCost;
 let toppingsCost;
 let sizeCost;
+let number;
 Pizza.prototype.toppingsCost = function () {
   return this.toppings.length * 50
 }
@@ -94,13 +95,14 @@ $(document).ready(function ()
     var sizeT = $('input[name="size"]:checked').val();
     var pizzaT = $('input[name="type"]:checked').val();
     var crustT = $('input[name="crust"]:checked').val();
+    var number = parseInt($('input#number').val())
     
     sizeType(sizeT);
     pizzaType(pizzaT);
     crustType(crustT);
     totalPrice(typeCost,crustCost,sizeCost)
 
-    alert(totalCost)
+    alert(totalCost*number)
 
   })
  
