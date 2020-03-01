@@ -7,9 +7,10 @@ function Pizza(type, size, crust, toppings) {
 let totalCost;
 let crustCost;
 let typeCost;
-let toppingsCost;
+let toppingsCost  = 0;
 let sizeCost;
 let number;
+let message;
 
 Pizza.prototype.toppingsCost = function () {
   return this.toppings.length * 50
@@ -61,7 +62,7 @@ function pizzaType(pizzaT)
     switch (pizzaT) {
 
       case "meatDeluxe":
-        return typeCost = 200;
+        return typeCost = 600;
         break;
 
       case "hawaiian":
@@ -77,7 +78,7 @@ function pizzaType(pizzaT)
         break;
 
       case "vegetarian":
-        return typeCost = 600;
+        return typeCost = 200;
         break;
 
     }
@@ -91,94 +92,98 @@ $(document).ready(function ()
 {
   $("#sendIt").click(function(event){
     event.preventDefault();
-    var sizeT = $('input[name="size"]:checked').val();
-    var pizzaT = $('input[name="type"]:checked').val();
-    var crustT = $('input[name="crust"]:checked').val();
-    var number = parseInt($('input#number').val())
     let toppingsS = [];
     $.each($("input[name='topping']:checked"),
     
     function(){
       toppingsS.push($(this).val())
     })
-    
-    function toppingPrice(topping){
 
-      switch(topping){
-      
-        case "pineapples" && crustT === "small":
-          return toppingsCost = 50
-          break;
-        case "pineapples"&& crustT === "medium":
-          return toppingsCost = 100
-          break;
-        case "pineapples"&& crustT === "large":
-          return toppingsCost = 150
-          break;
-          case "pineapples"&& crustT === "extraLarge":
-            return toppingsCost = 200
-          break;
-          case "chicken"&& crustT === "small":
-            return toppingsCost = 100
-          break;
-        case "chicken"&& crustT === "medium":
-          return toppingsCost = 150
-          break;
-        case "chicken"&& crustT === "large":
-          return toppingsCost = 200
-          break;
-          case "chicken"&& crustT === "extraLarge":
-            return toppingsCost = 250
-          break;
-          case "beef"&& crustT === "small":
-            return toppingsCost = 75
-          break;
-        case "beef"&& crustT === "medium":
-          return toppingsCost = 125
-          break;
-        case "beef"&& crustT === "large":
-          return toppingsCost = 175
-          break;
-          case "beef"&& crustT === "extraLarge":
-            return toppingsCost = 225
-          break;
-          case "bacon"&& crustT === "small":
-            return toppingsCost = 150
-          break;
-        case "bacon"&& crustT === "medium":
-          return toppingsCost = 200
-          break;
-        case "bacon"&& crustT === "large":
-          return toppingsCost = 250
-          break;
-          case "bacon"&& crustT === "extraLarge":
-            return toppingsCost = 300
-          break;
-          case "cheese"&& crustT === "small":
-            return toppingsCost = 50
-          break;
-        case "cheese"&& crustT === "medium":
-          return toppingsCost = 100
-          break;
-        case "cheese"&& crustT === "large":
-          return toppingsCost = 150
-          break;
-          case "cheese"&& crustT === "extraLarge":
-            return toppingsCost = 150
-          break;
+    function toppingsPrice(){
+    
+    for(var i = 0; i<toppingsS.length; i++){
+
+      if (toppingsS[i]==="pineapples" && sizeT === "small"){
+        return toppingsCost = 50 + toppingsCost
+      }
+      else if (toppingsS[i]==="pineapples" && sizeT === "medium"){
+        return toppingsCost = 100 + toppingsCost
+      }
+      else if (toppingsS[i]==="pineapples" && sizeT === "large"){
+        return toppingsCost = 150 + toppingsCost
+      }
+      else if (toppingsS[i]==="pineapples" && sizeT === "extraLarge"){
+        return toppingsCost = 200 + toppingsCost
+      }
+      else if (toppingsS[i]==="beef" && sizeT === "small"){
+        return toppingsCost = 75 + toppingsCost
+      }
+      else if (toppingsS[i]==="beef" && sizeT === "medium"){
+        return toppingsCost = 150 + toppingsCost
+      }
+      else if (toppingsS[i]==="beef" && sizeT === "large"){
+        return toppingsCost = 225 + toppingsCost
+      }
+      else if (toppingsS[i]==="beef" && sizeT === "extraLarge"){
+        return toppingsCost = 300 + toppingsCost
+      }
+      else if (toppingsS[i]==="bacon" && sizeT === "small"){
+        return toppingsCost = 150 + toppingsCost
+      }
+      else if (toppingsS[i]==="bacon" && sizeT === "medium"){
+        return toppingsCost = 300 + toppingsCost
+      }
+      else if (toppingsS[i]==="bacon" && sizeT === "large"){
+        return toppingsCost = 450 + toppingsCost
+      }
+      else if (toppingsS[i]==="bacon" && sizeT === "extraLarge"){
+        return toppingsCost = 600 + toppingsCost
+      }
+      else if (toppingsS[i]==="chicken" && sizeT === "small"){
+        return toppingsCost = 100 + toppingsCost
+      }
+      else if (toppingsS[i]==="chicken" && sizeT === "medium"){
+        return toppingsCost = 200 + toppingsCost
+      }
+      else if (toppingsS[i]==="chicken" && sizeT === "large"){
+        return toppingsCost = 300 + toppingsCost
+      }
+      else if (toppingsS[i]==="chicken" && sizeT === "extraLarge"){
+        return toppingsCost = 400 + toppingsCost
+      }
+      else if (toppingsS[i]==="cheese" && sizeT === "small"){
+        return toppingsCost = 50 + toppingsCost
+      }
+      else if (toppingsS[i]==="cheese" && sizeT === "medium"){
+        return toppingsCost = 150 + toppingsCost
+      }
+      else if (toppingsS[i]==="cheese" && sizeT === "large"){
+        return toppingsCost = 200 + toppingsCost
+      }
+      else if (toppingsS[i]==="cheese" && sizeT === "extraLarge"){
+        return toppingsCost = 250 + toppingsCost
+      }
+      else{
+        return message = "no toppings selected"
       }
     }
-    console.log(toppingsS.forEach(toppingPrice))
+    }
+    var sizeT = $('input[name="size"]:checked').val();
+    var pizzaT = $('input[name="type"]:checked').val();
+    var crustT = $('input[name="crust"]:checked').val();
+    var number = parseInt($('input#number').val())
     
 
     sizeType(sizeT);
     pizzaType(pizzaT);
     crustType(crustT);
+    toppingsPrice();
     totalPrice(typeCost,crustCost,sizeCost,toppingsCost)
 
-    //console.log(typeCost,crustCost,sizeCost,toppingsCost)
 
-    //alert(totalCost*number)
+    
+
+    alert(totalCost*number)
   })
  
 })
