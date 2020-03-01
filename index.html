@@ -7,13 +7,15 @@
     <script src = "js/scripts.js"></script>
     <title>Luigi's</title>
   </head>
-  <body>
-    <h1>LUIGI'S PIZZERIA</h1>
+  <body class="container">
+    <div class="title">
+      <h1>LUIGI'S PIZZERIA</h1>
+    </div>
 
 
     <form>
       <div id="pizzaType" class="form-check">
-        <h3>Choose you type of pizza</h3><br>
+        <h3>Choose you type of pizza</h3>
         <div class="form-check-inline">
           <label for="pizzaType1" class="form-check-label">Meat Deluxe</label>
           <input class="form-check-input" name="type" type="radio" value="meatDeluxe">
@@ -109,7 +111,7 @@
 
       <div class="form-check">
         <h3>Where do you want your Pizza</h3>
-        <div class="form-check-inline">
+        <div class="form-check-inline" id="deliverSelect">
           <label for="delivery" class="form-check-label">Delivery</label>
           <input class="form-check-input" name="delivery" type="radio" value="deliver">
         </div>

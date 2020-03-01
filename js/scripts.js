@@ -173,11 +173,11 @@ $(document).ready(function ()
     var crustT = $('input[name="crust"]:checked').val();
     var number = parseInt($('input#number').val())
 
-    var deliveryStatus = $('input[name="delivery"]:checked').val();
-
-    if (deliveryStatus==="deliver"){
+    //var deliveryStatus = $('input[name="delivery"]:checked').val();
+    
+    $('#deliverSelect').click(function(){
       $("#deliverLocation").toggle
-    }
+    })
     var deliverLocation = $('deliverLocale').val();
 
     
@@ -189,7 +189,7 @@ $(document).ready(function ()
     totalPrice(typeCost,crustCost,sizeCost,toppingsCost)
 
 
-    alert("Your Bill is" +totalCost*number+"to be taken at"+ deliverLocation)
+    alert("Your Bill is " +totalCost*number+" to be taken at "+ deliverLocation)
 
   })
 

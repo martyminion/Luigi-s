@@ -1,0 +1,14 @@
+#deliverLocation{
+  display: none;
+}
+
+body{
+  background-image: url('../images/background2.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.title{
+  background-image: url('../images/backgnd.png');
+}
+
