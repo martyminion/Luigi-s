@@ -107,12 +107,26 @@
         <input class="form-check-input" name="number" type="number" min="1" id="number">
       </div>
 
-      <!-- <div>
+      <div class="form-check">
         <h3>Where do you want your Pizza</h3>
+        <div class="form-check-inline">
+          <label for="delivery" class="form-check-label">Delivery</label>
+          <input class="form-check-input" name="delivery" type="radio" value="deliver">
+        </div>
+        <div class="form-check-inline">
+          <label for="pickUp" class="form-check-label">Store Pick-up</label>
+          <input class="form-check-input" name="delivery" type="radio" value="storepickup">
+        </div>
         
-      </div> -->
+      </div>
+      <div id="deliverLocation">
+        <div class="form-check">
+          <label for="delivery" class="form-check-label">Please Enter a delivery location</label>
+          <input class="form-check-input" name="delivery" id="deliverLocale" type="text">
+        </div>
+      </div>
 
-      <div>
+      <div class="form-check">
         <button type="submit" id="sendIt">Order</button>
       </div>
 

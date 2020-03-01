@@ -172,6 +172,14 @@ $(document).ready(function ()
     var pizzaT = $('input[name="type"]:checked').val();
     var crustT = $('input[name="crust"]:checked').val();
     var number = parseInt($('input#number').val())
+
+    var deliveryStatus = $('input[name="delivery"]:checked').val();
+
+    if (deliveryStatus==="deliver"){
+      $("#deliverLocation").toggle
+    }
+    var deliverLocation = $('deliverLocale').val();
+
     
 
     sizeType(sizeT);
@@ -181,9 +189,8 @@ $(document).ready(function ()
     totalPrice(typeCost,crustCost,sizeCost,toppingsCost)
 
 
-    
+    alert("Your Bill is" +totalCost*number+"to be taken at"+ deliverLocation)
 
-    alert(totalCost*number)
   })
- 
+
 })
