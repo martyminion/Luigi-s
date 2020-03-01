@@ -12,90 +12,93 @@ let sizeCost;
 Pizza.prototype.toppingsCost = function () {
   return this.toppings.length * 50
 }
-function sizeType() {
-  switch (sizeT) {
-    case "small":
-      sizeCost = 200;
-      break;
 
-    case "medium":
-      sizeCost = 300;
-      break;
-
-    case "large":
-      sizeCost = 400;
-      break;
-
-    case "extraLarge":
-      sizeCost = 500;
-      break;
-
-  }
-}
-function crustType() {
-  switch (crustT) {
-    case "thin":
-      crustCost = 200;
-      break;
-
-    case "thick":
-      crustCost = 300;
-      break;
-
-    case "deep":
-      crustCost = 400;
-      break;
-
-    case "cheeseFilled":
-      crustCost = 500;
-      break;
-
-
-  }
-
-}
-function pizzaType() 
-  {
-    switch (pizzaT) {
-
-      case "meatDeluxe":
-        typeCost = 200;
-        break;
-
-      case "hawaiian":
-        typeCost = 300;
-        break;
-
-      case "boerWoers":
-        typeCost = 400;
-        break;
-
-      case "chickenPeriPeri":
-        typeCost = 500;
-        break;
-
-      case "vegetarian":
-        typeCost = 600;
-        break;
-
-    }
-
-  }
 $(document).ready(function () 
 {
-  var pizzaT = $("form#pizzaType").val();
-  var crustT = $("form#crust").val();
-  var sizeT = $("form#size").val();
+  
+  function sizeType(sizeT) {
+    switch (sizeT) {
+      case "small":
+        return sizeCost = 200;
+        break;
+  
+      case "medium":
+        return sizeCost = 300;
+        break;
+  
+      case "large":
+        return sizeCost = 400;
+        break;
+  
+      case "extraLarge":
+        return sizeCost = 500;
+        break;
+  
+    }
+  }
+  function crustType(crustT) {
+    switch (crustT) {
+      case "thin":
+        return crustCost = 200;
+        break;
+  
+      case "thick":
+        return crustCost = 300;
+        break;
+  
+      case "deep":
+        return crustCost = 400;
+        break;
+  
+      case "cheeseFilled":
+        return crustCost = 500;
+        break;
+  
+  
+    }
+  
+  }
+  function pizzaType(pizzaT) 
+    {
+      switch (pizzaT) {
+  
+        case "meatDeluxe":
+          return typeCost = 200;
+          break;
+  
+        case "hawaiian":
+          return typeCost = 300;
+          break;
+  
+        case "boerWoers":
+          return typeCost = 400;
+          break;
+  
+        case "chickenPeriPeri":
+          return typeCost = 500;
+          break;
+  
+        case "vegetarian":
+          return typeCost = 600;
+          break;
+  
+      }
+  
+    }
 
-  $("#sendIt").click(function(){
+  $("#sendIt").click(function(event){
+    event.preventDefault();
+    var pizzaT = $("#pizzaType").val();
+    var crustT = $("#crust").val();
+    var sizeT = $("#size").val();
     
-    sizeType();
-    pizzaType();
-    crustType();
+    sizeType(sizeT);
+    pizzaType(pizzaT);
+    crustType(crustT);
     
-    alert(sizeCost+crustCost+typeCost)
+    console.log(sizeT)
+    alert("sizeT")
 
   })
-
-
+ 
 })
