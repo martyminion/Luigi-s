@@ -11,6 +11,7 @@ let toppingsCost  = 0;
 let sizeCost;
 let number;
 let message;
+let deliverLocation;
 
 Pizza.prototype.toppingsCost = function () {
   return this.toppings.length * 50
@@ -102,6 +103,15 @@ $(document).ready(function ()
   $("#cheeseCrust").click(function(){
     $("#cheeseCrust").children('img').toggle()
   })
+  $('#deliveryOptionP1').click(function(event){
+    event.preventDefault()
+    $("#deliverLocation").toggle()
+  })
+  $('#deliveryOptionP2').click(function(event){
+    event.preventDefault()
+    deliverLocation = "store"
+    
+  })
  
   $("#sendIt").click(function(event){
     event.preventDefault();
@@ -187,11 +197,9 @@ $(document).ready(function ()
     var number = parseInt($('input#number').val())
 
     //var deliveryStatus = $('input[name="delivery"]:checked').val();
-    $('#deliveryOptionp1').click(function(){
-      $("#deliverLocation").toggle()
-    })
     
-    var deliverLocation = $('deliverLocale').val();
+    
+    deliverLocation = $('#deliverLocale').val();
 
     
 
