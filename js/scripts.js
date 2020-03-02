@@ -103,16 +103,6 @@ $(document).ready(function ()
   $("#cheeseCrust").click(function(){
     $("#cheeseCrust").children('img').toggle()
   })
-  $('#deliveryOptionP1').click(function(event){
-    event.preventDefault()
-    $("#deliverLocation").toggle()
-  })
-  $('#deliveryOptionP2').click(function(event){
-    event.preventDefault()
-    deliverLocation = "store"
-    
-  })
- 
   $("#sendIt").click(function(event){
     event.preventDefault();
     let toppingsS = [];
@@ -195,22 +185,12 @@ $(document).ready(function ()
     var pizzaT = $('input[name="type"]:checked').val();
     var crustT = $('input[name="crust"]:checked').val();
     var number = parseInt($('input#number').val())
-
-    //var deliveryStatus = $('input[name="delivery"]:checked').val();
-    
-    
-    deliverLocation = $('#deliverLocale').val();
-
-    
-
     sizeType(sizeT);
     pizzaType(pizzaT);
     crustType(crustT);
     toppingsPrice();
     totalPrice(typeCost,crustCost,sizeCost,toppingsCost)
-
-
-    alert("Your Bill is " +totalCost*number+" to be taken at "+ deliverLocation)
+    alert("Your Bill is " +totalCost*number+)
 
   })
 
