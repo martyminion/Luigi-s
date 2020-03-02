@@ -16,6 +16,7 @@ let deliverLocation;
 Pizza.prototype.toppingsCost = function () {
   return this.toppings.length * 50
 }
+Pizza
 function sizeType(sizeT) {
   switch (sizeT) {
     case "small":
@@ -226,7 +227,13 @@ $(document).ready(function ()
     var pizzaT = $('input[name="type"]:checked').val();
     var crustT = $('input[name="crust"]:checked').val();
     var number = parseInt($('input#number').val())
-    
+
+    $("#newPizza").each(function(){
+      var sizeT = $('input[name="size"]:checked').val();
+      var pizzaT = $('input[name="type"]:checked').val();
+      var crustT = $('input[name="crust"]:checked').val();
+      var newPizza = new Pizza(pizzaT,sizeT,crustT,toppingsS)
+    })
     sizeType(sizeT);
     pizzaType(pizzaT);
     crustType(crustT);
