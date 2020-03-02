@@ -103,6 +103,47 @@ $(document).ready(function ()
   $("#cheeseCrust").click(function(){
     $("#cheeseCrust").children('img').toggle()
   })
+
+  $("#addPizza").click(function(event){
+    event.preventDefault();
+    $("#newPizza").append('<div id="pizzaType" class="form-check">'+'<h3>Choose you type of pizza</h3>'+'<div class="form-check-inline">'+
+    '<label for="pizzaType1" class="form-check-label">Meat Deluxe</label>'+
+    '<input class="form-check-input" name="type" type="radio" value="meatDeluxe"></div>'+'<div class="form-check-inline">'+
+    '<label for="pizzaType2" class="form-check-label">Hawaiian</label>'+
+    '<input class="form-check-input" name="type" type="radio" value="hawaiian"></div><br>'+'<div class="form-check-inline">'+
+    '<label for="pizzaType3" class="form-check-label">BoerWoers</label>'+
+    '<input class="form-check-input" name="type" type="radio" value="boerWoers"></div>'+'<div class="form-check-inline">'+
+    '<label for="pizzaType4" class="form-check-label">Chicken PeriPeri</label>'+
+    '<input class="form-check-input" name="type" type="radio" value="chickenPeriPeri"></div><br>'+'<div class="form-check-inline">'+
+    '<label for="pizzaType5" class="form-check-label">Vegetarian</label>'+
+    '<input class="form-check-input" name="type" type="radio" value="vegetarian"></div></div>'+'<div class="form-check">'+
+    '<h3>Does size Matter ??</h3>'+'<div class="form-check-inline">'+'<label for="pizzaSize1" class="form-check-label">Small</label>'+
+    '<input class="form-check-input" name="size" type="radio" value="small"></div>'+'<div class="form-check-inline">'+
+    '<label for="pizzaSize2" class="form-check-label">Medium</label>'+
+    '<input id="size" class="form-check-input" name="size" type="radio" value="medium"></div><br>'+'<div class="form-check-inline">'+
+    '<label for="pizzaSize3" class="form-check-label">Large</label>'+
+    '<input id="size" class="form-check-input" name="size" type="radio" value="large"></div>'+'<div class="form-check-inline">'+
+    '<label for="pizzaSize4" class="form-check-label">Extra Large</label>'+'<input id="size" class="form-check-input" name="size" type="radio" value="extraLarge"></div></div>'+
+    '<div id="crust" class="form-check">'+'<h3>Its a crusty affair</h3>'+'<div class="form-check-inline">'+
+    '<label for="pizzaCrust1" class="form-check-label">Thin Crust</label>'+
+    '<input class="form-check-input" name="crust" type="radio" value="thin"></div>'+'<div class="form-check-inline">'+
+    '<label for="pizzaCrust2" class="form-check-label">Thick Crust</label>'+
+    '<input class="form-check-input" name="crust" type="radio" value="thick"></div><br>'+'<div class="form-check-inline">'+
+    '<label for="pizzaCrust3" class="form-check-label">Deep Crust</label>'+
+    '<input class="form-check-input" name="crust" type="radio" value="deep"></div>'+
+    '<div class="form-check-inline"><label for="pizzaCrust4" class="form-check-label">Cheese-Filled</label>'+
+    '<input class="form-check-input" name="crust" type="radio" value="cheeseFilled"></div></div>'+'<div id="toppings" class="form-check">'+
+    '<h3>There iss always room for more topping goodness</h3><div class="form-check-inline"><label for="pizzaTopping1" '+
+    'class="form-check-label">Pineapples</label><input class="form-check-input" name="topping" type="checkbox" value="pineapples"></div>'+
+    '<div class="form-check-inline"><label for="pizzaTopping2" class="form-check-label">Chicken</label><input class="form-check-input" '+
+    'name="topping" type="checkbox" value="chicken"></div><br><div class="form-check-inline"><label for="pizzaTopping3" '+
+    'class="form-check-label">Beef</label><input class="form-check-input" name="topping" type="checkbox" value="beef">'+
+    '</div><div class="form-check-inline"><label for="pizzaTopping4" class="form-check-label">Bacon</label>'+
+    '<input class="form-check-input" name="topping" type="checkbox" value="bacon"></div><div class="form-check-inline"><label for="pizzaTopping5" class="form-check-label">Cheese</label><input class="form-check-input" name="topping" type="checkbox" value="cheese"></div></div><div class="form-check numberDiv"><h3>Do you really want just one ??</h3><blockquote>Tell me the number you really want, just between me and you</blockquote>'+
+    '<label id="numberLabel" for="number" class="form-check-label">More Pizza..More life</label><br>'+
+    '<input class="form-check-input" name="number" type="number" min="1" id="number"></div>"')
+  })
+
   $("#sendIt").click(function(event){
     event.preventDefault();
     let toppingsS = [];
@@ -185,12 +226,13 @@ $(document).ready(function ()
     var pizzaT = $('input[name="type"]:checked').val();
     var crustT = $('input[name="crust"]:checked').val();
     var number = parseInt($('input#number').val())
+    
     sizeType(sizeT);
     pizzaType(pizzaT);
     crustType(crustT);
     toppingsPrice();
     totalPrice(typeCost,crustCost,sizeCost,toppingsCost)
-    alert("Your Bill is " +totalCost*number+)
+    alert("Your Bill is " +totalCost*number)
 
   })
 
