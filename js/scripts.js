@@ -90,6 +90,19 @@ function totalPrice(typeCost,crustCost,sizeCost,toppingsCost){
 
 $(document).ready(function () 
 {
+  $("#thinCrust").click(function(){
+    $("#thinCrust").children('img').toggle()
+  })
+  $("#thickCrust").click(function(){
+    $("#thickCrust").children('img').toggle()
+  })
+  $("#deepCrust").click(function(){
+    $("#deepCrust").children('img').toggle()
+  })
+  $("#cheeseCrust").click(function(){
+    $("#cheeseCrust").children('img').toggle()
+  })
+ 
   $("#sendIt").click(function(event){
     event.preventDefault();
     let toppingsS = [];
@@ -174,10 +187,10 @@ $(document).ready(function ()
     var number = parseInt($('input#number').val())
 
     //var deliveryStatus = $('input[name="delivery"]:checked').val();
-    
-    $('#deliverSelect').click(function(){
-      $("#deliverLocation").toggle
+    $('#deliveryOptionp1').click(function(){
+      $("#deliverLocation").toggle()
     })
+    
     var deliverLocation = $('deliverLocale').val();
 
     

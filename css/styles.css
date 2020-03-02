@@ -5,10 +5,16 @@
 body{
   background-image: url('../images/background2.jpg');
   background-size: cover;
-  text-align: center;
+  }
+.crustInfo img{
+  display: none;
 }
-
-.title{
-  background-image: url('../images/backgnd.png');
+.hide{
+  display: none;
 }
-
+#numberLabel{
+  margin-right: 50px;
+}
+.numberDiv{
+  padding-bottom: 50px;
+}

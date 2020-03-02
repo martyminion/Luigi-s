@@ -1,18 +1,18 @@
-# {Delani Studios}
+# {Luigi's Pizzeria}
 #### {This Website provides an overview of Delani Studios, {21th February, 2020}
 #### By **Your's Faithfully**
 ## Description
-{Website built to give the user an idea of who Delani Studios are and what they do
+{A pizzeria website that enables you to make an order and have the meal delivered to your location
 }
 ## Setup/Installation Requirements
 * You only need a working internet connection
-* A working browser (and you can view the webpage) martyminion.github.io/DelaniStudios
+* A working browser (and you can view the webpage) martyminion.github.io/Luigi-s
 * Ubuntu / Windows OS
 * Install Git to make any adustments
 * And basic Linux commands to navigate through the directories
 {No further Dependencies}
 ## Known Bugs
-{The images get misplaced under a small screen, will look into it}
+{Let us know of any bugs from the use of the website}
 ## Technologies Used
 {HTML
 CSS
