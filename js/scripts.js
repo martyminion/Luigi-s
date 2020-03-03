@@ -16,6 +16,8 @@ let deliverLocation;
 let pizzaT;
 let sizeT;
 let crustT;
+let deliverCost;
+let finalCost;
 
 
 
@@ -243,51 +245,39 @@ Pizza.prototype.toppingsPrice = function () {
    pizzas.push(newPizza)
  })
 
-
  for (var j = 0; j<pizzas.length; j++){
  
   let piz = pizzas[j]
   let {type,size,crust,toppings}= piz
   piz.toppingsPrice()
-    console.log(toppingsCost)
     piz.pizzaType(type)
-    console.log(typeCost)
     piz.crustType(crust)
-    console.log(crustCost)
     piz.sizeType(size)
-    console.log(sizeCost)
     piz.totalPrice(typeCost, crustCost, sizeCost, toppingsCost)
-    console.log(totalCost)
-
-    $("#order").append('<div><p>This is your order: Pizza Type '+type+ ' Size: '+size+' Crust Type' +crust+ 'Toppings: ' +toppings+'</p></div><div>'+
-    'Total Cost:' +totalCost+ '</div> ' )
+    $("#order").append('<div><p>This is your order: Pizza Type: '+type+ ' Size: '+size+' Crust Type: ' +crust+ ' Toppings: ' +toppings+'</p></div><div>'+
+    'Total Cost: ' +totalCost+ '</div> ' )
+    finalCost = totalCost
+    finalCost = finalCost + FinalCost
  }
+ $("#delivery").click(function(event){
+  event.preventDefault()
+  deliverLocation = prompt("Please enter your delivery Location: ")
+  deliverCost = 500
 
- 
+  $("#totalCheck").append('<div>The order will be delivered to '+deliverLocation+' at '+deliverCost+' shillings </div>')
 
-    // var sizeT = $('input[name="size"]:checked').val();
-    // var pizzaT = $('input[name="type"]:checked').val();
-    // var crustT = $('input[name="crust"]:checked').val();
-    // var number = parseInt($('input#number').val())
-    // piz.toppingsPrice()
-    // console.log(toppingsCost)
-    // piz.pizzaType(type)
-    // console.log(typeCost)
-    // piz.crustType(crust)
-    // console.log(crustCost)
-    // piz.sizeType(size)
-    // console.log(sizeCost)
-    // piz.totalPrice(typeCost, crustCost, sizeCost, toppingsCost)
-    // console.log(totalCost)
+ })
+ $("#storePickUp").click(function(event){
+  event.preventDefault()
+  deliverLocation = "Luigi's"
+  $("#totalCheck").append('<div>The order will be picked up from '+deliverLocation+'</div>')
 
+ })
 
-    // pizzas[0].pizzaType(this.pizzaT);
-    // pizzas[0].sizeType(this.sizeT);
-    // pizzas[0].crustType(this.crustT);
-    // pizzas[0].toppingsPrice();
-    // pizzas[0].totalPrice(typeCost, crustCost, sizeCost, toppingsCost)
+ $("#checkOut").click(function(){
+   
 
-    //alert("Your Bill is " + newPizza.totalCost * number)
+ })
 
   })
 
