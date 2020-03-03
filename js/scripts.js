@@ -16,8 +16,8 @@ let deliverLocation;
 let pizzaT;
 let sizeT;
 let crustT;
-let deliverCost;
-let finalCost;
+let deliverCost = 0;
+let finalCost = 0;
 
 
 
@@ -257,7 +257,7 @@ Pizza.prototype.toppingsPrice = function () {
     $("#order").append('<div><p>This is your order: Pizza Type: '+type+ ' Size: '+size+' Crust Type: ' +crust+ ' Toppings: ' +toppings+'</p></div><div>'+
     'Total Cost: ' +totalCost+ '</div> ' )
     finalCost = totalCost
-    finalCost = finalCost + FinalCost
+    finalCost = finalCost + totalCost
  }
  $("#delivery").click(function(event){
   event.preventDefault()
@@ -275,7 +275,9 @@ Pizza.prototype.toppingsPrice = function () {
  })
 
  $("#checkOut").click(function(){
-   
+   let checkOutCost = finalCost+deliverCost
+
+   $("#totalCheck").append('<div>Your total cost is '+checkOutCost+'</div>')
 
  })
 
