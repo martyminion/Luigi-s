@@ -242,26 +242,44 @@ Pizza.prototype.toppingsPrice = function () {
    var newPizza = new Pizza(pizzaT, sizeT, crustT, toppingsS)
    pizzas.push(newPizza)
  })
- 
 
- let piz = pizzas[0]
- let {type,size,crust,toppings}= piz
+
+ for (var j = 0; j<pizzas.length; j++){
+ 
+  let piz = pizzas[j]
+  let {type,size,crust,toppings}= piz
+  piz.toppingsPrice()
+    console.log(toppingsCost)
+    piz.pizzaType(type)
+    console.log(typeCost)
+    piz.crustType(crust)
+    console.log(crustCost)
+    piz.sizeType(size)
+    console.log(sizeCost)
+    piz.totalPrice(typeCost, crustCost, sizeCost, toppingsCost)
+    console.log(totalCost)
+
+    $("#order").append('<div><p>This is your order: Pizza Type '+type+ ' Size: '+size+' Crust Type' +crust+ 'Toppings: ' +toppings+'</p></div><div>'+
+    'Total Cost:' +totalCost+ '</div> ' )
+ }
+
+ 
 
     // var sizeT = $('input[name="size"]:checked').val();
     // var pizzaT = $('input[name="type"]:checked').val();
     // var crustT = $('input[name="crust"]:checked').val();
     // var number = parseInt($('input#number').val())
+    // piz.toppingsPrice()
+    // console.log(toppingsCost)
+    // piz.pizzaType(type)
+    // console.log(typeCost)
+    // piz.crustType(crust)
+    // console.log(crustCost)
+    // piz.sizeType(size)
+    // console.log(sizeCost)
+    // piz.totalPrice(typeCost, crustCost, sizeCost, toppingsCost)
+    // console.log(totalCost)
 
-   
-   
-
-    console.log(type,size,crust,toppings)
-    piz.toppingsPrice()
-    console.log(toppingsCost)
-    // alert(sizeT)
-
-    
-    console.log(piz)
 
     // pizzas[0].pizzaType(this.pizzaT);
     // pizzas[0].sizeType(this.sizeT);
