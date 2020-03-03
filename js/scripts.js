@@ -104,16 +104,17 @@ Pizza.prototype.totalPrice = function totalPrice(typeCost, crustCost, sizeCost, 
 
 $(document).ready(function () {
   $("#thinCrust").click(function () {
-    $("#thinCrust").children('img').toggle()
+    $("#thinCrust").children('p').toggle()
+    $("#crustInfo").children('img').addClass("hide")
   })
   $("#thickCrust").click(function () {
-    $("#thickCrust").children('img').toggle()
+    $("#thickCrust").children('p').toggle()
   })
   $("#deepCrust").click(function () {
-    $("#deepCrust").children('img').toggle()
+    $("#deepCrust").children('p').toggle()
   })
   $("#cheeseCrust").click(function () {
-    $("#cheeseCrust").children('img').toggle()
+    $("#cheeseCrust").children('p').toggle()
   })
 
   $("#addPizza").click(function (event) {
@@ -276,7 +277,6 @@ Pizza.prototype.toppingsPrice = function () {
 
  $("#checkOut").click(function(){
    let checkOutCost = finalCost+deliverCost
-
    $("#totalCheck").append('<div>Your total cost is '+checkOutCost+'</div>')
 
  })

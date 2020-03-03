@@ -6,7 +6,25 @@ body{
   background-image: url('../images/background2.jpg');
   background-size: cover;
   }
-.crustInfo img{
+body p{
+  font-family: 'Lacquer';
+  font-size: 18px;
+}
+h1{
+  font-family: 'Lacquer';
+ 
+}
+h3{
+  font-family: 'Lacquer';
+}
+h4 {
+  font-family: 'Lacquer';
+
+}
+label{
+  font-size: 20px;
+}
+.crustInfo p{
   display: none;
 }
 .hide{
@@ -17,4 +35,8 @@ body{
 }
 .numberDiv{
   padding-bottom: 50px;
+}
+.btn{
+  margin: 10px;
+  padding: 10px;
 }
